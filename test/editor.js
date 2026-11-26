@@ -4,13 +4,18 @@ const assert = require('node:assert/strict');
 const vscode = require('vscode');
 
 async function run() {
+  await vscode.extensions.getExtension('local-preview.wkt-crs-formatter').activate();
   const source = 'GEOGCS["A",UNIT["degree",1]]';
   const doc = await vscode.workspace.openTextDocument({ language: 'wkt-crs', content: source });
+  await vscode.window.showTextDocument(doc);
   const edits = await vscode.commands.executeCommand('vscode.executeFormatDocumentProvider', doc.uri,
     { tabSize: 2, insertSpaces: true });
-  assert.equal(edits.length, 1);
+  assert.ok(edits?.length, 'Expected document formatting edits');
+  const change = new vscode.WorkspaceEdit();
+  change.set(doc.uri, edits);
+  assert.ok(await vscode.workspace.applyEdit(change));
   const eol = doc.eol === vscode.EndOfLine.CRLF ? '\r\n' : '\n';
-  assert.equal(edits[0].newText, ['GEOGCS["A",', '  UNIT["degree", 1]', ']'].join(eol));
+  assert.equal(doc.getText(), ['GEOGCS["A",', '  UNIT["degree", 1]', ']'].join(eol));
 
   const escaped = '"CS[\\"ellipsoidal\\",2]",';
   const text = await vscode.workspace.openTextDocument({ language: 'plaintext', content: `before ${escaped} after` });
