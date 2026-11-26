@@ -23,6 +23,14 @@ async function run() {
   editor.selection = new vscode.Selection(0, 7, 0, 7 + escaped.length);
   await vscode.commands.executeCommand('wkt-crs.format');
   assert.equal(text.getText(), 'before CS["ellipsoidal", 2] after');
+  assert.equal(text.languageId, 'plaintext');
+
+  for (const content of [escaped, 'CS[ellipsoidal, 2]']) {
+    const plain = await vscode.workspace.openTextDocument({ language: 'plaintext', content });
+    await vscode.window.showTextDocument(plain);
+    await vscode.commands.executeCommand('wkt-crs.format');
+    assert.equal(vscode.window.activeTextEditor.document.languageId, 'wkt-crs');
+  }
 }
 
 module.exports = { run };

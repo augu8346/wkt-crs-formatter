@@ -1,0 +1,19 @@
+{
+  "name": "WKT (Coordinate Reference System)",
+  "scopeName": "source.wkt-crs",
+  "patterns": [
+    {
+      "name": "string.quoted.double.wkt-crs",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [{ "match": "\"\"", "name": "constant.character.escape.wkt-crs" }],
+      "applyEndPatternLast": true
+    },
+    { "match": "\\b[A-Za-z][A-Za-z0-9_]*(?=\\s*[\\[(])", "name": "keyword.other.wkt-crs" },
+    { "match": "(?<![\\w.])[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:[Ee][+-]?\\d+)?(?![\\w.])", "name": "constant.numeric.wkt-crs" },
+    { "match": "\\b[A-Za-z][A-Za-z0-9_]*\\b", "name": "constant.language.wkt-crs" },
+    { "match": "[\\[(]", "name": "punctuation.section.group.begin.wkt-crs" },
+    { "match": "[\\])]", "name": "punctuation.section.group.end.wkt-crs" },
+    { "match": ",", "name": "punctuation.separator.wkt-crs" }
+  ]
+}

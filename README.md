@@ -4,13 +4,15 @@ A VS Code formatter for coordinate reference systems written in Well-Known Text 
 
 ## Install
 
-Requires VS Code 1.85 or newer. This preview is distributed as a VSIX, not through the Marketplace. In VS Code, run **Extensions: Install from VSIX...** and select `wkt-crs-formatter-0.1.0.vsix`. Alternatively:
+Requires VS Code 1.85 or newer. This preview is distributed as a VSIX, not through the Marketplace. In VS Code, run **Extensions: Install from VSIX...** and select `wkt-crs-formatter-0.2.0.vsix`. Alternatively:
 
 ```sh
-code --install-extension wkt-crs-formatter-0.1.0.vsix
+code --install-extension wkt-crs-formatter-0.2.0.vsix
 ```
 
 ## Use
+
+WKT language mode uses your VS Code theme to color element keywords, quoted names, numbers, and bare values such as `north`. Formatting an entire plain-text document enables WKT highlighting automatically. Formatting a selection inside a larger document preserves the surrounding language mode. Colors are editor styling, not characters added to the WKT.
 
 - Open a `.prj`, `.wkt`, `.wkt1`, or `.wkt2` file, then run **Format Document**. If other WKT formatters are installed, use **Format Document With...** to choose this one.
 - In an untitled or plain-text editor, paste a definition and run **WKT: Format Coordinate Reference System** from the Command Palette. The command formats the selection, or the whole document when nothing is selected.
