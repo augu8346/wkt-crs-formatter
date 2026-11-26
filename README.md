@@ -38,4 +38,6 @@ This is a structural formatter, not a CRS validator or converter. It expects one
 
 ## Build or contribute
 
-See `CONTRIBUTING.md` in the source repository for setup, tests, and release instructions. The MIT license is included in `LICENSE`.
+With Node.js 24 or newer, run `npm ci`, `npm test`, then `npm run package` to build the VSIX locally.
+`formatter.js` formats the expression, `extension.js` connects it to VS Code, and the TextMate grammar supplies highlighting.
+See [contributing](./CONTRIBUTING.md), [support](./.github/SUPPORT.md), and the [MIT license](./LICENSE).

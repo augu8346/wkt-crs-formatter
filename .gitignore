@@ -1,2 +1,9 @@
 node_modules/
 *.vsix
+.env
+.env.*
+.npmrc
+*.log
+*.pem
+*.key
+.vscode-test/

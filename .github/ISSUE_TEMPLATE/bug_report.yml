@@ -1,0 +1,10 @@
+name: Bug report
+description: Report a reproducible extension defect
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: VS Code and extension versions, steps, expected and actual results
+      description: Include only synthetic WKT or sanitized diagnostics.
+    validations:
+      required: true

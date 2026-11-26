@@ -1,5 +1,7 @@
 # Changelog
 
+## Unreleased
+
 ## 0.2.0
 
 - Highlight WKT using the editor theme, including whole-document results formatted from plain text.

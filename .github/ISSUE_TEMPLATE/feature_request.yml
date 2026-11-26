@@ -1,0 +1,9 @@
+name: Feature request
+description: Suggest a formatter improvement
+body:
+  - type: textarea
+    id: proposal
+    attributes:
+      label: User problem, proposed scope and acceptance criteria
+    validations:
+      required: true

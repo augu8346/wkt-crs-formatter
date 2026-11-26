@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Support and troubleshooting
+    url: https://github.com/augu8346/wkt-crs-formatter/blob/main/.github/SUPPORT.md
+    about: Check language mode, commands and input before reporting.
+  - name: Security guidance
+    url: https://github.com/augu8346/wkt-crs-formatter/blob/main/SECURITY.md
+    about: Do not post sensitive issues or samples publicly.

@@ -1,0 +1,15 @@
+name: Formatter diagnostic
+description: Diagnose formatting or syntax highlighting
+body:
+  - type: textarea
+    id: editor
+    attributes:
+      label: Editor and extension versions, theme, language mode and command
+    validations:
+      required: true
+  - type: textarea
+    id: sample
+    attributes:
+      label: Synthetic input, selection, expected result and observed result
+    validations:
+      required: true
