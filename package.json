@@ -1,0 +1,30 @@
+{
+  "name": "wkt-crs-formatter",
+  "displayName": "WKT CRS Formatter",
+  "description": "Format WKT1 and WKT2 coordinate reference systems, including JSON-escaped definitions.",
+  "version": "0.1.0",
+  "publisher": "local-preview",
+  "license": "MIT",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Formatters"],
+  "keywords": ["wkt", "wkt1", "wkt2", "crs", "projection"],
+  "main": "./extension.js",
+  "activationEvents": ["onLanguage:wkt-crs"],
+  "contributes": {
+    "languages": [{
+      "id": "wkt-crs",
+      "aliases": ["WKT (Coordinate Reference System)", "wkt-crs"],
+      "extensions": [".wkt", ".wkt1", ".wkt2", ".prj"]
+    }],
+    "commands": [{
+      "command": "wkt-crs.format",
+      "title": "WKT: Format Coordinate Reference System"
+    }]
+  },
+  "files": ["extension.js", "formatter.js", "README.md", "CONTRIBUTING.md", "CHANGELOG.md", "LICENSE"],
+  "scripts": {
+    "test": "node --test test/formatter.test.js",
+    "package": "vsce package --no-dependencies --allow-missing-repository"
+  },
+  "devDependencies": { "@vscode/vsce": "4.1.1" }
+}
